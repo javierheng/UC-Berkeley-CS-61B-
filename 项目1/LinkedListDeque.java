@@ -1,4 +1,4 @@
-import java.util.*;
+//import java.util.*;
 
 public class LinkedListDeque<type>{
     //Node嵌套类(作为双链表中的节点)
@@ -33,6 +33,17 @@ public class LinkedListDeque<type>{
     public LinkedListDeque(){
         sentinel1 = new Node(null,null,first);
         sentinel2 = new Node(null,first,null);
+    }
+    
+    public LinkedListDeque(LinkedListDeque other){
+        Node thistmp = this.first;
+        Node othertmp = other.first;
+        for(int x=0;x!=other.size;x++){
+            thistmp = othertmp;
+            thistmp = thistmp.next;
+            othertmp = othertmp.next;
+        }
+        this.size = other.size;s
     }
 
 
